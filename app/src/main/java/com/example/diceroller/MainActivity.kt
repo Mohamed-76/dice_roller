@@ -8,6 +8,7 @@ import android.widget.TextView
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rolldiced()
         }
+        diceImage=findViewById(R.id.dice_image)
     }
 
     private fun rolldiced() {
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             5 ->R.drawable.dice_5
             else ->R.drawable.dice_6
         }
-        val dinamicImage:ImageView = findViewById(R.id.dice_image)
-        dinamicImage.setImageResource(diceResource)
+
+        diceImage.setImageResource(diceResource)
     }
 }
